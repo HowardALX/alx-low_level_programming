@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_line - function draws a straight line in the terminal
+ * print_line - function create a straight line in the terminal
  * @n: number of time the character_sould be printed
  */
 void print_line(int n)
@@ -10,8 +10,8 @@ void print_line(int n)
 		_putchar('\n');
 	} else
 	{
-		int j;
-		for (j = 1; j <= n; j++)
+		int i;
+		for (i = 1; i <= n; i++)
 		{
 			_putchar('_');
 		}
