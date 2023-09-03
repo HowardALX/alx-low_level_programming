@@ -1,4 +1,3 @@
 #!/bin/bash
-gcc -wall -pedantic -werror -wextra -c *.c
-ar -rc liball.a *.o
-ranlib liball.a
+c_files=$(ls *.c)
+ar -cr liball.a $c_files

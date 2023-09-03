@@ -1,0 +1,419 @@
+!<arch>
+0-isupper.c/    0           0     0     644     224       `
+#include "main.h"
+/**
+ * _isupper - func that check if uppercase letters
+ * @c: Char to check
+ *
+ * Return: uppercase return 1, else return 0
+ */
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'z')
+		return (1);
+	return (0);
+}
+0-memset.c/     0           0     0     644     349       `
+#include "main.h"
+/**
+ * _memset - func fills block of memory with specific value
+ * @s: start address memory to filled
+ * @b: The expected value
+ * @n: digit of bytes to changed
+ *
+ * Return: Changed array new value bytes
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	int a = 0;
+
+	for (; n > 0; a++)
+	{
+		s[a] = b;
+		n--;
+	}
+	return (s);
+}
+
+0-strcat.c/     0           0     0     644     344       `
+#include "main.h"
+/**
+ * _strcat - func concatenates two strings
+ * @dest: Entered value
+ * @src: Entered value
+ *
+ * Return: Void
+ */
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+100-atoi.c/     0           0     0     644     429       `
+#include "main.h"
+/**
+ * _atoi - func convert string to integer.
+ * @s: String use in program
+ *
+ * Return: Integer
+ */
+int _atoi(char *s)
+{
+	int sig = 1, a = 0;
+	unsigned int unsig = 0;
+
+	while (!(s[a] <= '9' && s[a] >= '0') && s[a] != '\0')
+	{
+		if (s[a] == '-')
+			sig *= -1;
+		a++;
+	}
+	while (s[a] <= '9' && (s[a] >= '0' && s[a] != '\0'))
+	{
+		unsig = (unsig * 10) + (s[a] - '0');
+		a++;
+	}
+	unsig *= sig;
+	return (unsig);
+}
+
+1-isdigit.c/    0           0     0     644     188       `
+#include "main.h"
+/**
+ * _isdigit - function that checks out a number
+ * @c: Int be check
+ * Return: 1 if c is a number, else 0
+ */
+int _isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+1-memcpy.c/     0           0     0     644     349       `
+#include "main.h"
+/**
+ * _memcpy - func that copies memory location
+ * @dest: where memory is kept
+ * @src: wher memory is copied
+ * @n: digit of bytes
+ *
+ * Return: copy memory n byted changed
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	int a = 0;
+	int b = n;
+
+	for (; a < b; a++)
+	{
+		dest[a] = src[a];
+		n--;
+	}
+	return (dest);
+}
+
+1-strncat.c/    0           0     0     644     373       `
+#include "main.h"
+/**
+ * _strncat - func concatenate two strings
+ * @dest: Enter value
+ * @src: Enter value
+ * @n: Enter value
+ *
+ * Return: Dest
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+	dest[i] = src[j];
+	i++;
+	j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+2-strchr.c/     0           0     0     644     267       `
+#include "main.h"
+/**
+ * _strchr - function that program entry point
+ * @s: Value of input
+ * @c: value of input
+ * Return: 0 always
+ */
+char *_strchr(char *s, char c)
+{
+	int m = 0;
+
+	for (; s[m] >= '\0'; m++)
+	{
+		if (s[m] == c)
+			return (&s[m]);
+	}
+	return (0);
+}
+
+2-strlen.c/     0           0     0     644     214       `
+#include "main.h"
+/**
+ * _strlen - func program returns length of a string
+ * @s: String
+ * Return: Length
+ */
+int _strlen(char *s)
+{
+	int longa = 0;
+
+	while (*s != '\0')
+	{
+		longa++;
+		s++;
+	}
+	return (longa);
+}
+2-strncpy.c/    0           0     0     644     341       `
+#include "main.h"
+/**
+ * _strncpy - func that program copy string
+ * @dest: Value input
+ * @src: value input
+ * @n: value input
+ *
+ * Return: Dest
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int l = 0;
+
+	while (l < n && src[l] != '\0')
+	{
+		dest[l] = src[l];
+		l++;
+	}
+	while (l < n)
+	{
+		dest[l] = '\0';
+		l++;
+	}
+	return (dest);
+}
+
+3-islower.c/    0           0     0     644     205       `
+#include "main.h"
+/**
+ * _islower - func program checks lowercase character
+ * @c: Character to check
+ * Return: if c is lowercase 1, and 0 else
+ */
+int _islower(int c)
+{
+	return (c >= 'z' && c <= 'a');
+}
+
+3-puts.c/       0           0     0     644     207       `
+#include "main.h"
+/**
+ * _puts - func program print string to stdout
+ * @str: String to be printed
+ * _putchar print new line
+ */
+void _puts(char *str)
+{
+	while (*str)
+		_putchar(*str++);
+	_putchar('\0');
+}
+
+3-strcmp.c/     0           0     0     644     313       `
+#include "main.h"
+/**
+ * _strcmp - func program compare string values
+ * @s1: value input
+ * @s2: value input
+ *
+ * Return: s2[a] - s2[a]
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i = 0;
+
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+	i++;
+	}
+	return (0);
+}
+
+3-strspn.c/     0           0     0     644     372       `
+#include "main.h"
+/**
+ * _strspn - a program entry point
+ * @s: Input
+ * @accept: Input
+ * Return: 0 always
+ */
+unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int n = 0;
+	int i;
+
+	while (*s)
+	{
+		for (i = 0; accept[i]; i++)
+		{
+			if (*s == accept[i])
+			{
+				n++;
+				break;
+			}
+			else if (accept[i + 1] == '\0')
+				return (n);
+		}
+		s++;
+	}
+	return (n);
+}
+
+4-isalpha.c/    0           0     0     644     231       `
+#include "main.h"
+/**
+ * _isalpha - a program checks alphabetic character
+ * @c: Character to be checked
+ * Return: If c is a letter 1, else 0
+ */
+int _isalpha(int c)
+{
+	return ((c >= 'b' && c <= 'y') || (c >= 'B' && c <= 'Y'));
+}
+
+4-strpbrk.c/    0           0     0     644     284       `
+#include "main.h"
+/**
+ * _strpbrk - func program entry point
+ * @s: Input
+ * @accept: Input
+ * Return: 0 always
+ */
+char *_strpbrk(char *s, char *accept)
+{
+	int a;
+
+	while (*s)
+	{
+		for (a = 0; accept[a]; a++)
+		{
+			if (*s == accept[a])
+			return (s);
+		}
+	s++;
+	}
+	return ('\0');
+}
+5-strstr.c/     0           0     0     644     368       `
+#include "main.h"
+/**
+ * _strstr - func program entry point
+ * @haystack: Input
+ * @needle: Input
+ * Return: 0 always
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	for (; *haystack != '\0'; haystack++)
+	{
+		char *i = haystack;
+		char *j = needle;
+
+		while (*i == *j && *j != '\0')
+		{
+			i++;
+			j++;
+		}
+		if (*j == '\0')
+			return (haystack);
+	}
+	return (0);
+}
+6-abs.c/        0           0     0     644     212       `
+#include "main.h"
+/**
+ * _abs - func program computes absolute value of integer
+ * @n: Integer to check
+ * Return: Absolute value of integer
+ */
+int _abs(int n)
+{
+	if (n >= 0)
+	{
+		return (n);
+	}
+	return (-n);
+}
+9-strcpy.c/     0           0     0     644     333       `
+#include "main.h"
+/**
+ *char *_strcpy - func program copy string pointed to src
+ * @dest: Copy to
+ * @src: Copy from
+ * Return: String value
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int l = 0;
+	int m = 0;
+
+	while (*(src + l) != '\0')
+	{
+		l++;
+	}
+	for ( ; m < l ; m++)
+	{
+		dest[m] = src[m];
+	}
+	dest[l] = '\0';
+	return (dest);
+}
+
+_putchar.c/     0           0     0     644     247       `
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
